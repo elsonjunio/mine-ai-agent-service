@@ -8,7 +8,7 @@ from mine_ai_agent_service.llm.base import BaseLLMProvider
 class LMStudioProvider(BaseLLMProvider):
     """Provider para LMStudio via API compatível com OpenAI."""
 
-    def __init__(self, model: str = 'local-model', temperature: float = 0.0):
+    def __init__(self, model: str = 'google/gemma-3n-e4b', temperature: float = 0.0):
         self._model = model
         self._temperature = temperature
 

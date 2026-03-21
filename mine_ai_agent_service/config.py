@@ -7,14 +7,18 @@ _PROJECT_ROOT = Path(__file__).parent.parent
 
 class Settings(BaseSettings, extra='allow'):
     MODEL_PROVIDER: str = 'lmstudio'
+    LMSTUDIO_URL: str = 'http://localhost:1234/v1'
+    LMSTUDIO_EMBEDDING_MODEL: str = 'text-embedding-nomic-embed-text-v1.5'
+    LMSTUDIO_MODEL: str = 'google/gemma-3n-e4b'
+
     OPENAI_KEY: str = ''
     ANTHROPIC_KEY: str = ''
-    LMSTUDIO_URL: str = 'http://localhost:1234/v1'
 
     MCP_URLS: list[str] = ['http://localhost:8000/mcp']
 
-    LMSTUDIO_EMBEDDING_MODEL: str = 'text-embedding-nomic-embed-text-v1.5'
     DATA_DIR: str = str(_PROJECT_ROOT / 'data')
+
+    INTERNAL_TOKEN_SECRET: str = 'super-secret-change-this'
 
     REDIS_HOST: str = ''
     REDIS_PORT: int = 0
